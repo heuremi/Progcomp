@@ -22,7 +22,7 @@ int main()
             cout << matriz[i][j] << " ";
             j++;
         }
-       k++; 
+        k++; 
     }
     int bajada = n - 1;
     int jFijo = 0;
