@@ -1,29 +1,28 @@
-// 2056. Scholarship
-// https://acm.timus.ru/problem.aspx?space=1&num=2056
+// 1545. Hieroglyphs
+// https://acm.timus.ru/problem.aspx?space=1&num=1545
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
 {
     int n;
-    double total = 0;
-    bool allfive = true;
-    bool hasThree = false;
     cin >> n;
     
-    for(int i = 0; i < n; i++){
-        int note;
-        cin >> note;
-        if(note != 5) allfive = false;
-        if(note == 3) hasThree = true;
-        total += note;
+    map<char, vector<string>> letras;
+    
+    while(n--){
+        string s;
+        cin >> s;
+        letras[s[0]].push_back(s);
     }
     
-    if(allfive) cout << "Named\n";
-    else if(total / n >= 4.5 && !hasThree) cout << "High\n";
-    else if(!hasThree) cout << "Common\n";
-    else cout << "None\n";
+    char m;
+    cin >> m;
+    
+    for(auto a : letras[m]){
+        cout << a << endl;
+    }
 
     return 0;
 }
